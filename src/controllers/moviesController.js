@@ -19,7 +19,7 @@ exports.createMovie = async (req, res) => {
 exports.getMovies = async (req, res) => {
 
     try {
-        const movie = await Movies.find()
+        const movie = await Movie.find()
         res.json(movie)
 
     } catch (error) {
