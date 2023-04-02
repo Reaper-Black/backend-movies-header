@@ -8,7 +8,8 @@ const moviesSchema = new Schema({
     fecha_lanzamiento: String,
     descripcion: String,
     elenco: String,
-    imagen: String
+    imagen: String,
+    link: String
 }, {
     timestamps: true
 });

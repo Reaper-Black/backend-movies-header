@@ -31,7 +31,7 @@ exports.getMovies = async (req, res) => {
 exports.updateMovie = async (req, res) => {
 
     try {
-        const { nombre, categoria, duracion, director, fecha_lanzamiento, descripcion, elenco, imagen} = req.body;
+        const { nombre, categoria, duracion, director, fecha_lanzamiento, descripcion, elenco, imagen, link} = req.body;
         let movie = await Movie.findById(req.params.id)
 
         if(!movie) {
@@ -46,6 +46,7 @@ exports.updateMovie = async (req, res) => {
         movie.descripcion = descripcion
         movie.elenco = elenco
         movie.imagen = imagen
+        movie.link = link
 
         movie = await Movie.findOneAndUpdate({ _id: req.params.id },movie, { new: true} )
         res.json(movie)
